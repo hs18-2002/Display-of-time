@@ -1,32 +1,33 @@
-# Prerequisites
-*.d
+#include <bits/stdc++.h>
+using namespace std;
+class Time
+{
+protected:
+	int hours, minutes, seconds;
+	int i, j;
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+public:
+	void setData()
+	{
+		cout << "Enter Hours: ";
+		cin >> hours;
+		cout << "Enter Minutes: ";
+		cin >> minutes;
+		cout << "Enter Seconds: ";
+		cin >> seconds;
+		i = hours * 3600;
+		j = minutes * 60;
+	}
+	void getData()
+	{
+		cout << "The time is: " << hours << ":" << minutes << ":" << seconds << endl;
+		cout << "Total Time is: " << i + j + seconds << endl;
+	}
+};
+int main()
+{
+	Time t;
+	t.setData();
+	t.getData();
+	return 0;
+}
